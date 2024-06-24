@@ -2,7 +2,6 @@
 
 import cv2
 
-
 img = cv2.imread('test1.jpg')
 
 
@@ -10,14 +9,10 @@ if img is None:
     print("Error: Could not open or find the image.")
     exit()
 
-
-
- 
 gray_img = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
 
 
-haar_cascade = cv2.CascadeClassifier(cv2.data.haarcascades + 
-"haarcascade_frontalface_default.xml")  
+haar_cascade = cv2.CascadeClassifier(cv2.data.haarcascades + "haarcascade_frontalface_default.xml")  
 eye_cascade = cv2.CascadeClassifier(cv2.data.haarcascades + 'haarcascade_eye.xml')  
 
  
