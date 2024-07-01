@@ -1,0 +1,52 @@
+Step 1: Download the following libraries 
+a. L298 Motor Driver Library for Proteus 
+b. Arduino UNO Library for Proteus V2.0 
+c. Infrared Sensor Library for Proteus 
+Step 2: Extract this files and pest it in Proteus libraries folder and restart 
+the Proteus . 
+Step 3: Download the Proteus IDE and type the following code 
+after that save it and Export Complied 
+ Library 
+Step 4: Upload this HEX file in Arduino 
+
+void setup() {
+    pinMode(2, INPUT);
+    pinMode(3, INPUT);
+    pinMode(10, OUTPUT);
+    pinMode(11, OUTPUT);
+    pinMode(12, OUTPUT);
+    pinMode(13, OUTPUT);
+}
+
+void loop() {
+    int v = digitalRead(2);
+    int s = digitalRead(3);
+
+    if (v == 1 && s == 1) {
+        digitalWrite(13, HIGH);
+        digitalWrite(12, LOW);
+        digitalWrite(11, HIGH);
+        digitalWrite(10, LOW);
+    }
+
+    if (v == 1 && s == 0) {
+        digitalWrite(13, LOW);
+        digitalWrite(12, HIGH);
+        digitalWrite(11, LOW);
+        digitalWrite(10, HIGH);
+    }
+
+    if (v == 0 && s == 1) {
+        digitalWrite(13, HIGH);
+        digitalWrite(12, LOW);
+        digitalWrite(11, LOW);
+        digitalWrite(10, HIGH);
+    }
+
+    if (v == 0 && s == 0) {
+        digitalWrite(13, LOW);
+        digitalWrite(12, HIGH);
+        digitalWrite(11, LOW);
+        digitalWrite(10, HIGH);
+    }
+}
